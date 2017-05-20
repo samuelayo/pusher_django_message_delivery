@@ -110,7 +110,9 @@
 </div>
 
 <script>
-    var pusher = new Pusher('XXX_APP_KEY');
+    var pusher = new Pusher('XXX_APP_KEY',{
+      cluster: 'XXX_APP_CLUSTER'
+    });
     var socketId = null;
     pusher.connection.bind('connected', function() {
         socketId = pusher.connection.socket_id;
